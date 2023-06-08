@@ -1,0 +1,39 @@
+GET http://localhost:5050/posts
+
+######
+
+POST http://localhost:5050/posts HTTP/1.1
+content-type: application/json
+
+{
+  "category":"test",
+  "title": "post numero 06b",
+  "img": "https://picsum.photos/600/600",
+  "content": "Lorem...",
+  "author":{
+    "name":"Zelda",
+    "avatar":"https://picsum.photos/280/280"
+  },
+  "rate": 4  
+}
+
+######
+
+GET http://localhost:5050/posts/bytitle/01
+
+######
+
+PATCH http://localhost:5050/posts/646f5e8a5b3752337c1c28dd HTTP/1.1
+content-type: application/json
+
+{
+  "title": "post numero 01 mod",
+  "author.name": "John",
+  "author.avatar": "https://picsum.photos/300/300",
+  "content":"ciao ciao ciao"
+}
+
+######
+
+DELETE http://localhost:5050/posts/646f91af3115cdb8e2ef2ea1 HTTP/1.1
+
